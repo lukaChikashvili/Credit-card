@@ -1,4 +1,4 @@
-import { useGLTF, useTexture } from '@react-three/drei'
+import { Environment, useGLTF, useTexture } from '@react-three/drei'
 import React, { useEffect, useRef } from 'react'
 import red from '../assets/red.jpg';
 import { MeshPhysicalMaterial } from 'three';
@@ -42,6 +42,8 @@ const Model = () => {
     }, [texture])
   return (
       <>
+     <Environment preset='city' />
+
         <primitive object={model.scene} scale = {50} ref = {card} />
       </>
   )
