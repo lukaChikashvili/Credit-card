@@ -1,13 +1,14 @@
 import React from 'react'
 import { Canvas } from '@react-three/fiber'
+import Card from './Card'
+import Lights from './Lights'
 
 const CanvasPage = () => {
   return (
    <>
-     <Canvas>
-        <mesh>
-            <boxGeometry />
-        </mesh>
+     <Canvas >
+      <Lights />
+       <Card />
      </Canvas>
    </>
   )
