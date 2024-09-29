@@ -1,7 +1,8 @@
 import { Environment, useGLTF, useTexture } from '@react-three/drei'
-import React, { useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import red from '../assets/red.jpg';
 import { MeshPhysicalMaterial } from 'three';
+import { CardContext } from '../context/CardContext';
 
 
 const Model = () => {
@@ -9,6 +10,9 @@ const Model = () => {
     const model = useGLTF('./credit_card.glb');
 
     let card = useRef();
+
+    const { preset } = useContext(CardContext);
+
 
     // credit card texture
     const texture = useTexture(red);
@@ -34,7 +38,7 @@ const Model = () => {
                     child.material = newMaterial;
                     child.material.needsUpdate = true;
                     child.material.metalness = 0.02;
-                    console.log(child.material)
+                   
 
                 }
             })
@@ -42,7 +46,7 @@ const Model = () => {
     }, [texture])
   return (
       <>
-     <Environment preset="apartment"  files="./hdr.jpg" background />
+     <Environment preset={preset}  files="./hdr.jpg" background />
 
         <primitive object={model.scene} scale = {50} ref = {card} />
       </>
