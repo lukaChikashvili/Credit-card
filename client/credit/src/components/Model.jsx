@@ -42,7 +42,7 @@ const Model = () => {
     }, [texture])
   return (
       <>
-     <Environment preset='night'  files="./hdr.jpg" background />
+     <Environment preset="apartment"  files="./hdr.jpg" background />
 
         <primitive object={model.scene} scale = {50} ref = {card} />
       </>
