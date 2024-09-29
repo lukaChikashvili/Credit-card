@@ -11,7 +11,10 @@ export const CardProvider = ({ children }) => {
     // preset
     const [preset, setPreset] = useState('night');
 
-    return (<CardContext.Provider value={{ modal, setModal, preset, setPreset }}>
+    // card designs
+    const [backModal, setBackModal] = useState(false);
+
+    return (<CardContext.Provider value={{ modal, setModal, preset, setPreset, backModal, setBackModal }}>
          { children }
     </CardContext.Provider>)
 }

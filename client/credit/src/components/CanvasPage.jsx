@@ -8,7 +8,7 @@ import { CardContext } from '../context/CardContext'
 
 const CanvasPage = () => {
 
-  const { modal,  setPreset } = useContext(CardContext);
+  const { modal,  setPreset, backModal } = useContext(CardContext);
 
  
   const changePreset = (name) => {
@@ -26,7 +26,7 @@ const CanvasPage = () => {
      </Canvas>
 
 {modal ? (
-  <div className='absolute top-56 right-4 z-10 flex flex-col gap-4 bg-white p-4 rounded-lg '>
+  <div className='absolute top-36 right-4 z-10 flex flex-col gap-4 bg-white p-4 rounded-lg '>
  {
    presetData.map((value) => (
 
@@ -38,7 +38,11 @@ const CanvasPage = () => {
  }
 </div>
 ) : ''}
- 
+
+
+ {backModal && <div className='absolute top-36 right-4 z-10 flex flex-col gap-4 bg-white p-4 rounded-lg' >
+ dgkdgdg
+  </div>}
 
 
     
