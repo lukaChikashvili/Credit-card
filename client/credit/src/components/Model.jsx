@@ -11,11 +11,11 @@ const Model = () => {
 
     let card = useRef();
 
-    const { preset } = useContext(CardContext);
+    const { preset, design } = useContext(CardContext);
 
 
     // credit card texture
-    const texture = useTexture(red);
+    const texture = useTexture(design);
      
     useEffect(() => {
      
@@ -25,8 +25,8 @@ const Model = () => {
                 if(child.isMesh) {
                     const newMaterial = new MeshPhysicalMaterial({
                         map: texture,
-                        ior: 2,
-                        metalness: 0.4,
+                        ior: 1,
+                        metalness: 5,
                         reflectivity: 0.9,
                         iridescenceIOR: 0.5,
                         sheen: 0.8,
