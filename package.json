@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "backend": "nodemon server/index.js",
-    "frontend": "npm run dev --prefix frontend",
+    "frontend": "npm run dev --prefix client/credit",
     "dev": "concurrently \"npm run frontend\" \"npm run backend\""
     
   },
