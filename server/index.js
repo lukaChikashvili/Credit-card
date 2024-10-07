@@ -1,6 +1,7 @@
 const express = require('express');
 require('dotenv').config();
 const cookieParser = require('cookie-parser');
+const { connectDB } = require('./config/db');
 
 
 const app = express();
@@ -10,6 +11,8 @@ app.use(cookieParser());
 
 const port = process.env.PORT || 5000;
 
-app.listen(port, (req, res) => {
+connectDB();
+
+app.listen(port, () => {
     console.log(`server running on port ${port}`);
 })
